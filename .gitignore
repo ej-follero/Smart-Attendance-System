@@ -1,0 +1,138 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+**/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files (never commit)
+.env
+.env*.local
+.env.*
+.env.backup
+.env.performance
+.env.security
+*.env
+
+# secrets and keys
+*.key
+*.crt
+*.pfx
+*.keystore
+*.jks
+secrets/**
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# backups and data files
+/backups/
+*.zip
+*.tar.gz
+*.sql
+*.bak
+*.dump
+
+# test files at root only (test scripts in scripts/ are tracked)
+/test-*.md
+/test-*.js
+/test-*.ts
+/test-*.html
+
+# local temp scripts (may contain dev credentials)
+/temp/
+
+# temporary files
+*.tmp
+*.temp
+*.log
+
+# IDE and editor
+.vscode/
+.idea/
+.cursor/
+*.swp
+*.swo
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# uploads and media
+/public/uploads/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.svg
+*.mp4
+*.mov
+*.avi
+*.heic
+
+# database
+*.db
+*.sqlite
+*.sqlite3
+
+# performance and cache
+.nyc_output/
+.cache/
+.parcel-cache/
+performance-report.json
+
+# MQTT env template (use env.template instead)
+mqtt-env-vars.txt
+mosquitto.conf
+
+# Cursor user-rules backup (use Settings > User Rules for global)
+docs/cursor-user-rule-*.txt
+docs/cursor-user-rules-global.txt
+
+# prisma (including generated docs)
+prisma/
+
+# project documentation (not tracked)
+docs/
+
+# docker compose files
+docker-compose*.yml
+
+# gitignore and vercel ignore files
+.gitignore
+.vercelignore
+.gitleaks.toml
+
+# entire scripts folder (exclude all scripts by default)
+scripts/
+
+# ad-hoc/test scripting files
+scripts/test-*.js
+scripts/test-*.ts
+docs/scripts/

@@ -1,0 +1,16 @@
+{
+  "name": "icct-attendance-websocket",
+  "version": "1.0.0",
+  "description": "WebSocket server for ICCT Smart Attendance System",
+  "main": "websocket.ts",
+  "scripts": {
+    "start": "ts-node websocket.ts",
+    "dev": "nodemon --exec ts-node websocket.ts"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.10",
+    "nodemon": "^3.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

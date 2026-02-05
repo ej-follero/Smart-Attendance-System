@@ -1,0 +1,373 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 224 70% 56%; /* Changed to ICCT blue (#3b82f6) */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 224 70% 56%; /* Changed to ICCT blue for hover states */
+    --accent-foreground: 0 0% 98%; /* White text on blue background */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 224 70% 56%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    /* ICCT-SAS Palette */
+    --icctSAS-blue: 224 70% 56%; /* #2D6CDF */
+    --icctSAS-blue-dark: 222 70% 35%; /* #1B4A9F */
+    --icctSAS-blue-light: 217 100% 95%; /* #E6F0FF */
+    --icctSAS-gray: 225 11% 68%; /* #A3A9B8 */
+    --icctSAS-gray-light: 220 28% 97%; /* #F5F8FC */
+    --icctSAS-gray-dark: 225 44% 16%; /* #222B45 */
+    --icctSAS-green: 158 100% 36%; /* #00B87C */
+    --icctSAS-red: 0 100% 62%; /* #FF4B4B */
+    --icctSAS-yellow: 50 100% 50%; /* #FFD600 */
+    
+    /* Custom Dropdown Menu Colors - Override default popover/accent colors */
+    /* --popover: var(--icctSAS-blue-light); /* Use ICCT blue light for dropdown background */
+    /* --popover-foreground: var(--icctSAS-gray-dark); /* Dark text on light background */
+    /* --accent: var(--icctSAS-blue); /* Use ICCT blue for hover states */
+    /* --accent-foreground: 0 0% 98%; /* White text on blue background */
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    /* ICCT-SAS Palette (dark mode, optional overrides) */
+    --icctSAS-blue: 224 70% 56%;
+    --icctSAS-blue-dark: 222 70% 35%;
+    --icctSAS-blue-light: 217 100% 15%;
+    --icctSAS-gray: 225 11% 38%;
+    --icctSAS-gray-light: 220 28% 17%;
+    --icctSAS-gray-dark: 225 44% 86%;
+    --icctSAS-green: 158 100% 36%;
+    --icctSAS-red: 0 100% 62%;
+    --icctSAS-yellow: 50 100% 50%;
+  }
+  * {
+    @apply border-border;
+  }
+  input,
+  select,
+  textarea,
+  button {
+    @apply rounded-xl;
+  }
+  body {
+    @apply bg-light text-primary font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-primary font-bold;
+  }
+  a {
+    @apply text-secondary hover:text-primary transition-colors;
+  }
+}
+
+@layer components {
+  /* Big Calendar Styles */
+  .rbc-btn-group:first-child {
+    display: none;
+  }
+
+  .rbc-toolbar-label {
+    text-align: right;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .rbc-btn-group:last-child {
+    font-size: 0.875rem;
+  }
+
+  .rbc-btn-group:last-child button {
+    border: none;
+    background-color: #f5f8fc;
+    margin-left: 0.125rem;
+  }
+
+  .rbc-toolbar button.rbc-active {
+    background-color: #3b82f6;
+    color: white;
+    box-shadow: none;
+  }
+
+  .rbc-time-view {
+    border-color: #f5f8fc;
+  }
+
+  .rbc-time-header {
+    display: none;
+  }
+
+  .rbc-time-content {
+    border: none;
+  }
+
+  .rbc-time-gutter.rbc-time-column {
+    font-size: 0.75rem;
+  }
+
+  .rbc-time-gutter.rbc-time-column .rbc-timeslot-group {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .rbc-timeslot-group {
+    background-color: #f5f8fc;
+  }
+
+  .rbc-day-slot {
+    font-size: 0.875rem;
+  }
+
+  .rbc-event {
+    border: none;
+    color: theme('colors.gray.800');
+    padding: 0.625rem;
+    margin: 0.625rem;
+    width: 99%;
+  }
+
+  .rbc-event:nth-child(odd) {
+    background-color: #e6f0ff;
+    color: white;
+  }
+
+  .rbc-event:nth-child(even) {
+    background-color: #f5f8fc;
+  }
+
+  .rbc-event-label {
+    color: theme('colors.gray.600');
+    margin-bottom: 0.25rem;
+  }
+}
+
+@layer utilities {
+  /* Remove the custom color utility classes for .text-primary, .bg-primary, etc. */
+}
+
+@media screen {
+  .print-only { display: none !important; }
+}
+
+/* Logout Page Animations */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.animate-bounce-slow {
+  animation: bounce 2s infinite;
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+/* Hide browser's built-in password reveal button (for Chrome, Edge, Opera) */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear,
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-input-decoration,
+input[type="password"]::-webkit-input-clear-button,
+input[type="password"]::-webkit-input-password-reveal-button {
+  display: none !important;
+}
+
+/* Modern react-big-calendar week header styles */
+.rbc-header {
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  padding: 0.5rem 0 0.2rem 0;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+.rbc-header span {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.rbc-header.rbc-today {
+  color: #2563eb;
+  background: #f0f7ff;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.rbc-header.rbc-today span {
+  color: #2563eb;
+}
+
+.rbc-header .rbc-button-link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.rbc-header .rbc-button-link:focus {
+  outline: 2px solid #2563eb;
+}
+
+/* Make the day number larger and bold */
+.rbc-header .rbc-button-link strong {
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: block;
+  margin-top: 0.1rem;
+}
+
+/* Remove default border from header row */
+.rbc-time-header.rbc-time-header {
+  border-bottom: none;
+}
+
+/* Hide the default react-big-calendar week header row */
+.rbc-header-row {
+  display: none !important;
+}
+/* Hide the all-day row in react-big-calendar week view */
+.rbc-allday-cell, .rbc-allday-events {
+  display: none !important;
+}
+.rbc-row.rbc-allday-row {
+  display: none !important;
+}
+
+/* Make the time gutter (time labels) text gray */
+.rbc-time-gutter, .rbc-time-gutter .rbc-timeslot-group, .rbc-time-gutter .rbc-label {
+  color: #64748b !important; /* Tailwind's slate-500 */
+}
+
+/* Responsive TableList styles to prevent overflow */
+.table-list-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.table-list-container table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.table-list-container th,
+.table-list-container td {
+  /* Removed text-align: center and white-space: nowrap to allow per-column control */
+  padding: 8px 12px;
+  vertical-align: middle;
+}
+
+@media (max-width: 800px) {
+  .table-list-container th:nth-child(5),
+  .table-list-container td:nth-child(5),
+  .table-list-container th:nth-child(6),
+  .table-list-container td:nth-child(6) {
+    display: none;
+  }
+}
+
+.search-highlight {
+  background-color: #fef08a;
+  color: #713f12;
+  border-radius: 0.25rem;
+  padding: 0 0.25rem;
+  font-weight: 500;
+}
